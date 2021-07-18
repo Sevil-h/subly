@@ -18,9 +18,9 @@ const Cards: React.FC<IProps> = ({ contents }) => {
   const renderList = (): JSX.Element[] => {
     return contents.map((content) => {
       return (
-        <li className="Cards" key={content.id}>
-          <div className="List-header">
-            <img className="List-img" src={content.cover} alt="Cover image"/>
+        <li className="Card" key={content.id}>
+          <div className="Card-header">
+            <img className="Card-img" src={content.cover} alt="Cover image"/>
             <h2>{content.name}</h2>
           </div>
           <p>{content.status}</p>

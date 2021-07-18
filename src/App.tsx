@@ -32,8 +32,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Hello</h1>
-      <Cards />
+      <Cards contents={contents}/>
       <>
 
       </>

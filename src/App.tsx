@@ -11,8 +11,8 @@ interface IState {
     cover: string,
     languages: string[],
     status: string,
-    createdAt: string,
-    updatedAt: string,
+    createdAt: Date,
+    updatedAt: Date,
     errorMessage?: string
   }[]
 }

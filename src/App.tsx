@@ -22,7 +22,7 @@ function App() {
 
   // Fetching Cards from URL with axios
 
-    useEffect(() => {
+  useEffect(() => {
     axios
     .get('https://run.mocky.io/v3/a811c0e9-adae-4554-9694-173aa23bc38b')
     .then((response: AxiosResponse) => {
@@ -30,14 +30,15 @@ function App() {
     })
   }, [])
 
-  return (
-    <div className="container">
-      <Cards contents={contents}/>
-      <>
 
-      </>
-    </div>
-  );
-}
 
-export default App;
+    return (
+      <div className="container">
+        <Cards contents={contents}/>
+      </div>
+      );
+  }
+
+
+
+  export default App;

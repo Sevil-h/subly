@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react';
 
 interface IProps {
   contents: {
@@ -15,27 +14,28 @@ interface IProps {
 
 const Cards: React.FC<IProps> = ({ contents }) => {
 
-  const renderList = (): JSX.Element[] => {
+  const renderCards = (): JSX.Element[] => {
     return contents.map((content) => {
       return (
 
-        <li className="Card" key={content.id}>
-          <div className="Card-header">
-            <img className="Card-img" src={content.cover} alt="Cover image"/>
-            <h2>{content.name}</h2>
+        <li className="card" key={content.id}>
+          <div className="card-header">
+            <img className="card-img" src={content.cover} alt="Cover photo"/>
           </div>
-
-          <p>{content.status === 'error' && 'Error in processing'}</p>
-          <p>{content.status === 'transcribing' && 'Transcribing'}</p>
-          <p>{content.status === 'ready' && `Edited ${new Date().getMonth() - new Date(content.updatedAt).getMonth()} months ago`}</p>
-          <p>{}</p>
+          <div className="card-info">
+        {/*Add status*/}
+            <p className="card-name">{content.name}</p>
+            <p className="card-status">{content.status === 'error' && 'Error in processing'}</p>
+            <p className="card-status">{content.status === 'transcribing' && 'Transcribing'}</p>
+            <p className="card-status">{content.status === 'ready' && `Edited ${new Date().getMonth() - new Date(content.updatedAt).getMonth()} months ago`}</p>
+          </div>
         </li>
         )
     })
   }
   return(
-    <ul>
-      {renderList()}
+    <ul className="cards">
+      {renderCards()}
     </ul>
     )
 }

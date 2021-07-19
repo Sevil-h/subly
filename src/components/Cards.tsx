@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Button from './Button'
 interface IProps {
   contents: {
     id: number,
@@ -19,8 +19,10 @@ const Cards: React.FC<IProps> = ({ contents }) => {
       return (
 
         <li className="card" key={content.id}>
-          <div className="card-header">
+          <div className="transcribing ">
             <img className="card-img" src={content.cover} alt="Cover photo"/>
+            <button className="btn btn--edit">Edit</button>
+            <Button/>
           </div>
           <div className="card-info">
         {/*Add status*/}

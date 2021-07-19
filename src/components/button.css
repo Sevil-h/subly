@@ -1,0 +1,58 @@
+/*Button*/
+.transcribing:hover img {
+  filter: brightness(0.5);
+}
+.transcribing:hover .btn--edit {
+  display: inline-block;
+}
+
+.error:hover img {
+  background-color:  red;
+}
+
+.btn {
+  font-family:  'Open Sans', sans-serif;
+  font-weight:  400;
+  cursor:  pointer;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 35%;
+  left: 45%;
+  border-radius:  3px;
+  padding: 8px 16px;
+  display: none;
+}
+
+.btn:hover {
+  transform:  translateY(-3px);
+}
+
+/*Button Colors and styles*/
+
+.btn--edit {
+  background-color: transparent;
+  border: 1px solid white;
+  color:  white;
+  display: none;
+  text-align: center;
+}
+
+.btn--delete {
+  background-color: transparent;
+  border: 1px solid white;
+  color:  white;
+  border-radius:  3px;
+  padding: 8px 16px;
+  display: none;
+  text-align: center;
+}
+
+.btn--report {
+  background-color: transparent;
+  border: 1px solid white;
+  color:  white;
+  border-radius:  3px;
+  padding: 8px 16px;
+  display: none;
+  text-align: center;
+}

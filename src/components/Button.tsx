@@ -3,9 +3,10 @@ import  './button.css'
 
 const Button = ({ }) => {
   return (
-    <>
-    <button className="btn btn-edit"></button>
-    </>
+    <div className="btn-container">
+    <button className="btn btn--report">Report</button>
+    <button className="btn btn--delete">Delete</button>
+    </div>
   )
 }
 

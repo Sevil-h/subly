@@ -21,13 +21,16 @@ const Cards: React.FC<IProps> = ({ contents }) => {
       return (
 
         <li className="card" key={content.id}>
-          <div className={content.status === 'ready' ? 'ready' : 'transcribing' && content.status === 'error' ? 'error' : 'transcribing'}>
+          <div className={content.status === 'error' ? 'error' : 'ready'}>
 
             <img className="card-img" src={content.cover} alt="Cover photo"/>
             <div className="hover-positon">
-              <p className="transcribing-text">Transcribing subtitles</p>
-              <p className="error-text">An error occured while processing you file. Delete file to try again, and report issue if the problem persists.</p>
-              <Button/>
+              <p className={!content.status === 'error' ? 'transcribing-text transcribing-text--active' : 'transcribing'}>Transcribing subtitles</p>
+              <p className={content.status === 'error' ? 'error-text error-text--active' : 'error'}>An error occured while processing you file. Delete file to try again, and report issue if the problem persists.</p>
+              <div className="btn-container">
+                <Button type='btn btn--delete' text="Delete"/>
+                <Button type='btn btn--report' text="Report"/>
+              </div>
             </div>
           </div>
           <div className="card-info">

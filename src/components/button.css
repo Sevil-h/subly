@@ -41,6 +41,7 @@
   border: 1px solid white;
   color:  white;
   text-align: center;
+  display:  inline-block;
 }
 
 .btn--delete {

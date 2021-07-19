@@ -1,5 +1,7 @@
 import React from 'react'
 import Button from './Button'
+
+
 interface IProps {
   contents: {
     id: number,
@@ -19,12 +21,13 @@ const Cards: React.FC<IProps> = ({ contents }) => {
       return (
 
         <li className="card" key={content.id}>
-          <div className="error ">
+          <div className={content.status === 'ready' ? 'ready' : 'transcribing' && content.status === 'error' ? 'error' : 'transcribing'}>
+
             <img className="card-img" src={content.cover} alt="Cover photo"/>
             <div className="hover-positon">
               <p className="transcribing-text">Transcribing subtitles</p>
-              <p className="error-text error-text--active">An error occured while processing you file. Delete file to try again, and report issue if the problem persists.</p>
-              < Button/>
+              <p className="error-text">An error occured while processing you file. Delete file to try again, and report issue if the problem persists.</p>
+              <Button/>
             </div>
           </div>
           <div className="card-info">

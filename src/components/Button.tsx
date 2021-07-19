@@ -1,13 +1,42 @@
 import React from 'react'
 import  './button.css'
 
-const Button = ({ }) => {
-  return (
-    <div className="btn-container">
-    <button className="btn btn--report">Report</button>
-    <button className="btn btn--delete">Delete</button>
-    </div>
-  )
+interface IProps {
+  contents: {
+    id: number,
+    name: string,
+    cover: string,
+    languages: string[],
+    status: string,
+    createdAt: Date,
+    updatedAt: Date,
+  }[]
 }
+
+const Button: React.FC<IProps> = ({ contents }) => {
+    const renderButtons = (): JSX.Element[] => {
+
+    return (
+    contents.forEach((content) => {
+      if(content.status === 'ready') {
+        <Button type='btn btn--edit ' text="Edit"/>
+      } else if (content.status === 'error') {
+        <Button type='btn btn--delete' text="Delete"/>
+      }
+    })
+    )
+  }
+    return(
+      renderButtons()
+    )
+}
+
+// const Button = ({ type, text }) => {
+//   return (
+//     <div className="btn-container">
+//     <button className={type}>{text}</button>
+//     </div>
+//   )
+// }
 
 export default Button
